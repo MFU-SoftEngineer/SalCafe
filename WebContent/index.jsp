@@ -51,7 +51,7 @@
 			<span class="menu"><img src="images/menu-icon.png" alt=""/></span>
 			<ul class="nav1 menu-list">
 				<li class="menu-item menu-item-current"><a class="menu-link" href="index.html">HOME</a></li>
-				<li class="menu-item"><a class="menu-link" href="about.html">POPULAR</a></li>
+				<li class="menu-item"><a class="menu-link" href="popular.jsp">POPULAR</a></li>
 				<li class="menu-item"><a class="menu-link" href="gallery.html">GALLERY</a></li>
 				<li class="menu-item"><a class="menu-link" href="codes.html">CODES</a></li>
 				<li class="menu-item"><a class="menu-link" href="contact.html" >CONTACT</a></li>
