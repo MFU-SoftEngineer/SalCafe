@@ -10,27 +10,27 @@
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--mobile apps-->
 <!--Custom Theme files -->
-<link href="css/index/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-<link href="css/index/style.css" type="text/css" rel="stylesheet" media="all"> 
-<link href="css/index/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="css/style.css" type="text/css" rel="stylesheet" media="all"> 
+<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
 <!-- //Custom Theme files -->
 <!-- js -->
-<script src="js/index/jquery-1.11.1.min.js"></script> 
+<script src="js/jquery-1.11.1.min.js"></script> 
 <!-- //js -->
 <!--web-fonts-->
 <link href='https://fonts.googleapis.com/css?family=Aladin' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <!--//web-fonts-->
 <!--animate-->
-<link href="css/index/animate.css" rel="stylesheet" type="text/css" media="all">
-<script src="js/index/wow.min.js"></script>
+<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+<script src="js/wow.min.js"></script>
 	<script>
 		 new WOW().init();
 	</script>
 <!--//end-animate-->
 <!-- start-smoth-scrolling-->
-<script type="text/javascript" src="js/index/move-top.js"></script>
-<script type="text/javascript" src="js/index/easing.js"></script>	
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>	
 <script type="text/javascript">
 		jQuery(document).ready(function($) {
 			$(".scroll").click(function(event){		
@@ -47,10 +47,10 @@
 	<!--banner-->
 	<div class="banner">
 	    <div class="bnr-img">
-			<img class="wow fadeInLeftBig animated" data-wow-delay=".5s" src="images/index/a.png" alt=""/>
+			<img class="wow fadeInLeftBig animated" data-wow-delay=".5s" src="images/a.png" alt=""/>
 		</div>
 		<div class="top-nav">
-			<span class="menu"><img src="images/index/menu-icon.png" alt=""/></span>
+			<span class="menu"><img src="images/menu-icon.png" alt=""/></span>
 			<ul class="nav1 menu-list">
 				<li class="menu-item menu-item-current"><a class="menu-link" href="index.html">HOME</a></li>
 				<li class="menu-item"><a class="menu-link" href="popular.jsp">POPULAR</a></li>
@@ -98,7 +98,7 @@
 					</form>
 				</div>
 				<!-- pop-up-box -->
-				<script src="js/index/jquery.magnific-popup.js" type="text/javascript"></script>
+				<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
 				<!--//pop-up-box -->
 				<script>
 					$(document).ready(function() {
@@ -116,7 +116,7 @@
 					});
 				</script>
 			</div>
-			<img class="wow zoomIn animated" data-wow-delay=".5s" src="images/index/img1.png" alt=""/>
+			<img class="wow zoomIn animated" data-wow-delay=".5s" src="images/img1.png" alt=""/>
 		</div>
 		<div class="clearfix"> </div>
 	</div>
@@ -198,16 +198,16 @@
 			</div>
 			<div class="col-md-5 popular-right wow fadeInRight animated" data-wow-delay=".5s">
 				<div class="col-md-6 popular-grids">
-					<img src="images/index/img2.jpg" class="img-responsive zoom-img" alt="">
+					<img src="images/img2.jpg" class="img-responsive zoom-img" alt="">
 				</div>
 				<div class="col-md-6 popular-grids">
-					<img src="images/index/img3.jpg" class="img-responsive zoom-img" alt="">
+					<img src="images/img3.jpg" class="img-responsive zoom-img" alt="">
 				</div>
 				<div class="col-md-6 popular-grids">
-					<img src="images/index/img4.jpg" class="img-responsive zoom-img" alt="">
+					<img src="images/img4.jpg" class="img-responsive zoom-img" alt="">
 				</div>
 				<div class="col-md-6 popular-grids">
-					<img src="images/index/img5.jpg" class="img-responsive zoom-img" alt="">
+					<img src="images/img5.jpg" class="img-responsive zoom-img" alt="">
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -292,12 +292,12 @@
 	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 	<!--//smooth-scrolling-of-move-up-->
 	<!--scrolling js-->
-	<script src="js/index/jquery.nicescroll.js"></script>
-	<script src="js/index/scripts.js"></script>
+	<script src="js/jquery.nicescroll.js"></script>
+	<script src="js/scripts.js"></script>
 	<!--//scrolling js-->
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/index/bootstrap.js"></script>
+    <script src="js/bootstrap.js"></script>
 </body>
 </html>
