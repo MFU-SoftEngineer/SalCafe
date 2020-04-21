@@ -53,7 +53,7 @@
 			<span class="menu"><img src="images/menu-icon.png" alt=""/></span>
 			<ul class="nav1 menu-list">
 				<li class="menu-item"><a class="menu-link" href="index.jsp">HOME</a></li>
-				<li class="menu-item menu-item-current"><a class="menu-link" href="popular.jsp">ABOUT</a></li>
+				<li class="menu-item menu-item-current"><a class="menu-link" href="popular.jsp">Popular</a></li>
 				<li class="menu-item"><a class="menu-link" href="gallery.html">GALLERY</a></li>
 				<li class="menu-item"><a class="menu-link" href="codes.html">CODES</a></li>
 				<li class="menu-item"><a class="menu-link" href="contact.html" >CONTACT</a></li>
@@ -77,21 +77,22 @@
 			</ul>
 		</div>
 		<div class="banner-text">
-			<h1 class="wow fadeInDown animated" data-wow-delay=".5s"><a href="index.jsp">CalCafe </a> </h1>
+			<h1 class="wow fadeInDown animated" data-wow-delay=".5s"><a href="index.jsp">SAL Cafe Shop</a> </h1>
 			<h2 class="wow fadeInUp animated" data-wow-delay=".5s"><a href="index.jsp">Home</a> / Popular</h2>
 		</div>
 		<div class="clearfix"> </div>
 	</div>
+	<!--//banner-->
 	<!--about-->
 	<div class="welcome about">
 		<div class="container">
 			<div class="col-md-6 about-right wow fadeInRight animated" data-wow-delay=".5s">
-				<h4 class="title"></h4>
-				<h3 class="title1">THE BEST <br>COFFEE IS <span>Cal</span>Cafe</h3>
+				<h4 class="title">About Us </h4>
+				<h3 class="title1"><br><span>SAL</span>Cafe Shop</h3>
 			</div>
 			<div class="col-md-6 about-left wow fadeInLeft animated" data-wow-delay=".5s">
 				<h5></h5>
-				<p class="data"></p>
+				<p class="data"><br/><br/><br/><br/><br/></p>
 			</div>
 			<span class="bg-text bg-right">A</span>
 			<div class="clearfix"> </div>
@@ -102,10 +103,10 @@
 	<div class="about-menu">
 		<div class="container">
 			<h3 class="title1 wow fadeInDown animated" data-wow-delay=".5s">Choose from our variety of flavors.</h3>
-			<p class="data wow fadeInLeft animated" data-wow-delay=".5s">The following are the most sold products today</p>
+			<p class="data wow fadeInLeft animated" data-wow-delay=".5s">Porttitor vestibulum eu nisl. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum luctus dui at velit rhoncus, eu tempus mi feugiat. Lorem ipsum dolor sit amet  Integer consectetur metus nec eros elementum, sit amet sagittis lectus feugiat. Phasellus vestibulum, lorem vitae faucibus dapibus.</p>
 			<div class="menu-row wow zoomIn animated" data-wow-delay=".5s">
 				<div class="col-md-6 menu-left">
-					<img src="images/mainPopularCafe.jpg" alt=""/>
+					<img src="images/img6.jpg" alt=""/>
 				</div>
 				<div class="col-md-6 menu-right scrollbar scrollbar1">
 					<%
@@ -125,13 +126,13 @@
 								</div>
 								<div class="clearfix"></div>
 							</div>
-					<%} %>	
+					<%} %>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
 			<div class="menu-row wow zoomIn animated" data-wow-delay=".5s">
 				<div class="col-md-6 menu-left">
-					<img src="images/mainPopularSnack.jpeg" alt=""/>
+					<img src="images/img7.jpg" alt=""/>
 				</div>
 				<div class="col-md-6 menu-right scrollbar scrollbar1">
 					<%
@@ -163,11 +164,11 @@
 		<div class="container">
 			<div class="book-info wow fadeInDown animated" data-wow-delay=".5s">
 				<div class="book-left">
-					<h2 class="wow fadeInLeftBig animated" data-wow-delay=".5s">Book Your Coffee Now </h2>
-					<p class="wow fadeInLeftBig animated" data-wow-delay=".5s">Call NOW to our toll free number Or book online </p>
+					<h3 class="wow fadeInLeftBig animated" data-wow-delay=".5s">Book Your Coffee Now </h3>
+					<p class="wow fadeInLeftBig animated" data-wow-delay=".5s">Call NOW to our toll free number </p>
 				</div>
 				<div class="book-right">
-					<h3 class="wow fadeInRightBig animated" data-wow-delay=".5s">+0066 62313050</h3>
+					<h3 class="wow fadeInRightBig animated" data-wow-delay=".5s">+0099887755</h3>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -181,7 +182,7 @@
 			<div class="col-md-4 footer-left wow fadeInDown animated" data-wow-delay=".5s">
 				<h4>Information</h4>
 				<ul>
-					<li><a href="testimonial.html"><i class="glyphicon glyphicon-chevron-right"></i>Customer Evaluation</a></li>
+					<li><a href="testimonial.html"><i class="glyphicon glyphicon-chevron-right"></i> Testimonials</a></li>
 					<li><a href="team.html"><i class="glyphicon glyphicon-chevron-right"></i> Our Team</a></li>
 					<li><a href="history.html"><i class="glyphicon glyphicon-chevron-right"></i> History</a></li>
 					<li><a href="faq.html"><i class="glyphicon glyphicon-chevron-right"></i> FAQ</a></li>
@@ -192,6 +193,7 @@
 				<ul>
 					<li><a href="about.html"><i class="glyphicon glyphicon-chevron-right"></i> About</a></li>
 					<li><a href="gallery.html"><i class="glyphicon glyphicon-chevron-right"></i> Gallery</a></li>
+					<li><a href="codes.html"><i class="glyphicon glyphicon-chevron-right"></i> Short Codes</a></li>
 					<li><a href="contact.html"><i class="glyphicon glyphicon-chevron-right"></i> Contacts</a></li>
 				</ul>
 			</div>
@@ -209,9 +211,11 @@
 						<li><a href="#"> </a></li>
 						<li><a href="#" class="fb"> </a></li>
 						<li><a href="#" class="in"> </a></li>
+						<li><a href="#" class="dott"> </a></li>
 					</ul>
 				</div>
 			</div>
+			<div class="clearfix"> </div>
 		</div>
 	</div>
 	<!--//footer-->
