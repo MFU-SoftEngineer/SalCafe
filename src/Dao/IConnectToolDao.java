@@ -1,7 +1,7 @@
 package Dao;
 
 import org.hibernate.SessionFactory;
-public interface ConnectToolDao {
+public interface IConnectToolDao {
 	public SessionFactory getConnectFactory();
 }
 

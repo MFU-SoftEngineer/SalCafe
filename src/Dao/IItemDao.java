@@ -4,7 +4,7 @@ import java.util.List;
 
 import Model.Item;
 
-public interface ItemDao {
+public interface IItemDao {
 	//Create Item(return true=success;false=fail)
 	public boolean createItem(Item item);
 	//Delete item by Item id(return true=success;false=fail)

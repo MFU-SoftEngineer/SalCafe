@@ -1,10 +1,10 @@
-package Service.ServiceImpl;
+package Service;
 
 import java.util.List;
 
 import Model.Item;
 
-public interface ItemServiceImpl {
+public interface IItemService {
 	//Create Item(return true=success;false=fail)
 		public boolean createItem(Item item);
 		//Delete item by Item id(return true=success;false=fail)

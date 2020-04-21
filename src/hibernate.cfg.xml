@@ -17,7 +17,7 @@
         <!-- connect pool size -->  
         <property name="connection.pool_size">5</property>
         
-        <mapping resource="/Item.hbm.xml"></mapping>
+        <mapping resource="/Model/Item.hbm.xml"></mapping>
         
     </session-factory>
 </hibernate-configuration>

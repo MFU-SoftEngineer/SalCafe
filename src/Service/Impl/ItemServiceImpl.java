@@ -1,14 +1,14 @@
-package Service;
+package Service.Impl;
 
 import java.util.List;
 
 import Dao.Impl.ItemDaoImpl;
 import Model.Item;
-import Service.ServiceImpl.ItemServiceImpl;
+import Service.IItemService;
 
-public class ItemService implements ItemServiceImpl{
+public class ItemServiceImpl implements IItemService{
 	ItemDaoImpl itemDaoImpl;
-	public ItemService() {
+	public ItemServiceImpl() {
 		itemDaoImpl = new ItemDaoImpl();
 	}
 	@Override

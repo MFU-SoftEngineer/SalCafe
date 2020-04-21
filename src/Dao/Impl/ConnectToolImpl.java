@@ -5,10 +5,10 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.service.ServiceRegistry;
 
-import Dao.ConnectToolDao;
+import Dao.IConnectToolDao;
 import Dao.Impl.ConnectToolImpl;
 
-public class ConnectToolImpl implements ConnectToolDao{
+public class ConnectToolImpl implements IConnectToolDao{
 
 	@Override
 	public SessionFactory getConnectFactory() {

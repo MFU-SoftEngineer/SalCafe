@@ -6,11 +6,11 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.service.ServiceRegistry;
-import Dao.ItemDao;
+import Dao.IItemDao;
 
 import Model.*;
 
-public class ItemDaoImpl implements ItemDao{
+public class ItemDaoImpl implements IItemDao{
 	SessionFactory sessionFactory;
 	Session session;
 	ConnectToolImpl connectToolImpl;
