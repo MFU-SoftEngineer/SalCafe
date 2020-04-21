@@ -41,7 +41,7 @@
 <!--//end-smoth-scrolling-->
 </head>
 <body>
-<%@ page import="Service.*" %>
+<%@ page import="Service.Impl.*" %>
 <%@ page import="Model.*" %>
 <%@ page import="java.util.*" %>
 	<!--banner-->
@@ -110,11 +110,11 @@
 				</div>
 				<div class="col-md-6 menu-right scrollbar scrollbar1">
 					<%
-						ItemService itemService = new ItemService();
-						List<Item> itemList1 = itemService.queryAllItemByType(1);
-						int j = 0;
-						for(Item item:itemList1){
-							j++;
+						ItemServiceImpl itemService = new ItemServiceImpl();
+									List<Item> itemList1 = itemService.queryAllItemByType(1);
+									int j = 0;
+									for(Item item:itemList1){
+										j++;
 					%>
 							<div class="menu-info">
 								<div class="menu-list-left">
