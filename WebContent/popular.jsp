@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>About</title>
+<title>Popular</title>
 <!--mobile apps-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -86,13 +86,12 @@
 	<div class="welcome about">
 		<div class="container">
 			<div class="col-md-6 about-right wow fadeInRight animated" data-wow-delay=".5s">
-				<h4 class="title">About Us </h4>
-				<h3 class="title1">THE BEST <br>COFFEE IS <span>ESPR</span>ESSO </h3>
+				<h4 class="title"></h4>
+				<h3 class="title1">THE BEST <br>COFFEE IS <span>Cal</span>Cafe</h3>
 			</div>
 			<div class="col-md-6 about-left wow fadeInLeft animated" data-wow-delay=".5s">
-				<h5>Suscipit mollis enim Nulla finibus nulla tellus, non dapibus.  </h5>
-				<p class="data">Porttitor vestibulum eu nisl. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum luctus dui at velit rhoncus, eu tempus mi feugiat. Lorem ipsum dolor sit amet  Integer consectetur metus nec eros elementum, sit amet sagittis lectus feugiat. Phasellus vestibulum, lorem vitae faucibus dapibus, lacus mi hendrerit neque, sit amet pellentesque orci risus eu mi. Maecenas arcu diam, condimentum id vestibulum quis
-				pellentesque quis arcu.</p>
+				<h5></h5>
+				<p class="data"></p>
 			</div>
 			<span class="bg-text bg-right">A</span>
 			<div class="clearfix"> </div>
