@@ -1,5 +1,6 @@
 package Dao;
 
+import java.util.Collection;
 import java.util.List;
 
 import Model.Item;
@@ -17,4 +18,6 @@ public interface IItemDao {
 	public List<Item> queryAllItemByType(int itemType);
 	//query item by item sales(requestNum == how many number of popular item you want)
 	public List<Item> queryAllItemBySales(int requestNum);
+	//query all item by id list
+	public List<Item> queryAllItemByIdList(Collection id);
 }
