@@ -1,10 +1,12 @@
 package Dao.Impl;
+import java.util.Collection;
 import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.query.Query;
 import org.hibernate.service.ServiceRegistry;
 import Dao.IItemDao;
 
@@ -15,9 +17,15 @@ public class ItemDaoImpl implements IItemDao{
 	Session session;
 	ConnectToolImpl connectToolImpl;
 	public ItemDaoImpl() {
-		System.out.println("initial ItemDao");
-		ConnectToolImpl connectToolImpl1 = new ConnectToolImpl();
-		sessionFactory = connectToolImpl1.getConnectFactory();
+		try {
+			System.out.println("initial ItemDao");
+			ConnectToolImpl connectToolImpl1 = new ConnectToolImpl();
+			sessionFactory = connectToolImpl1.getConnectFactory();
+		}catch(Exception e) {
+			System.out.println("initial ItemDao wrong");
+			e.printStackTrace();
+		}
+		
 	}
 	@Override
 	public boolean createItem(Item item) {
@@ -39,25 +47,69 @@ public class ItemDaoImpl implements IItemDao{
 
 	@Override
 	public List<Item> queryAllItem() {
-		session = sessionFactory.getCurrentSession();
-		session.beginTransaction();
-		List<Model.Item> itemList = session.createQuery("from Item").list();
-		session.getTransaction().commit();
+		List<Model.Item> itemList = null;
+		try {
+			session = sessionFactory.getCurrentSession();
+			session.beginTransaction();
+			itemList = session.createQuery("from Item").list();		
+			return itemList;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.getTransaction().commit();
+			session.close();
+		}	
 		return itemList;
 	}
 
 	@Override
 	public List<Item> queryAllItemByType(int itemType) {
-		session = sessionFactory.getCurrentSession();
-		session.beginTransaction();
-		List<Item> itemList = session.createQuery("SELECT ent FROM Item ent WHERE ent.itemType=:ln order by itemSales desc").setParameter("ln", itemType).list();
-		session.getTransaction().commit();
+		List<Item> itemList = null;
+		try {
+			session = sessionFactory.getCurrentSession();
+			session.beginTransaction();
+			itemList = session.createQuery("SELECT ent FROM Item ent WHERE ent.itemType=:ln").setParameter("ln", itemType).list();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.getTransaction().commit();
+			session.close();
+		}	
 		return itemList;
 	}
 
 	@Override
 	public List<Item> queryAllItemBySales(int requestNum) {
+		List<Item> itemList = null;
+		try {
+			session = sessionFactory.getCurrentSession();
+			session.beginTransaction();
+			itemList = session.createQuery("SELECT ent FROM Item ent WHERE ent.itemType=:typeId order by itemSales desc").setParameter("typeId", 1).setFirstResult(0).setMaxResults(requestNum).list();
+			List<Item> itemList2 = session.createQuery("SELECT ent FROM Item ent WHERE ent.itemType=:typeId order by itemSales desc").setParameter("typeId", 2).setFirstResult(0).setMaxResults(requestNum).list();
+			itemList.addAll(itemList2);
+		}catch(Exception e) {
+			
+		}finally {
+			session.getTransaction().commit();
+			session.close();
+		}
+		return itemList;
+	}
+	@Override
+	public List<Item> queryAllItemByIdList(Collection id) {
 		// TODO Auto-generated method stub
-		return null;
+		List<Item> itemList = null;
+		try {
+			session = sessionFactory.getCurrentSession();
+			session.beginTransaction();
+			String hql = "from Item where itemId in (:ids)";
+			itemList = session.createQuery(hql).setParameterList("ids", id).list();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.getTransaction().commit();
+	        session.close();
+		}
+	    return itemList;
 	}
 }
