@@ -1,5 +1,6 @@
 package Service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import Model.Item;
@@ -16,5 +17,8 @@ public interface IItemService {
 		//query item by item type
 		public List<Item> queryAllItemByType(int itemType);
 		//query item by item sales(requestNum == how many number of popular item you want)
-		public List<Item> queryAllItemBySales(int requestNum);
+		public HashMap<Integer, List<Item>> queryAllItemBySales(int requestNum);
+		//query all item by id list
+		public List<Item> queryAllItemByIdList(String idString);
+		
 }
