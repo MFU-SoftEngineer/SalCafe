@@ -1,5 +1,8 @@
 package Service.Impl;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 
 import Dao.Impl.ItemDaoImpl;
@@ -42,9 +45,32 @@ public class ItemServiceImpl implements IItemService{
 	}
 
 	@Override
-	public List<Item> queryAllItemBySales(int requestNum) {
+	public HashMap<Integer,List<Item>> queryAllItemBySales(int requestNum) {
 		// TODO Auto-generated method stub
-		return null;
+		List<Item> itemList = itemDaoImpl.queryAllItemBySales(requestNum);
+		HashMap<Integer,List<Item>> itemMap = new HashMap<Integer,List<Item>>();
+		List<Item> itemList1 = new ArrayList<Item>();
+		List<Item> itemList2 = new ArrayList<Item>();
+		for(Item i:itemList) {
+			if(i.getItemType() == 1) {
+				itemList1.add(i);
+			}else {
+				itemList2.add(i);
+			}
+		}
+		itemMap.put(1, itemList1);
+		itemMap.put(2, itemList2);
+		return itemMap;
+	}
+	@Override
+	public List<Item> queryAllItemByIdList(String idString) {
+		// TODO Auto-generated method stub
+		String[] idList = idString.split("S");
+		Collection<Integer> idArray = new ArrayList<Integer>();
+		for(int i = 0;i<idList.length;i++) {
+			idArray.add(Integer.valueOf(idList[i]));
+		}
+		return itemDaoImpl.queryAllItemByIdList(idArray);
 	}
 
 }
