@@ -54,7 +54,7 @@
 			<ul class="nav1 menu-list">
 				<li class="menu-item menu-item-current"><a class="menu-link" href="index.jsp">HOME</a></li>
 				<li class="menu-item"><a class="menu-link" href="popular.jsp">POPULAR</a></li>
-				<li class="menu-item"><a class="menu-link" href="gallery.html">GALLERY</a></li>
+				<li class="menu-item"><a class="menu-link" href="menu.jsp">MENU</a></li>
 			</ul>
 			<div class="clearfix"> </div>
 			<!-- script-for-menu -->
@@ -193,7 +193,7 @@
 		<div class="container">
 			<div class="col-md-7 popular-left">
 				<h4 class="title wow fadeInLeft animated" data-wow-delay=".5s">Popular Flavors </h4>
-				<h3 class="title1 wow fadeInLeft animated" data-wow-delay=".5s">Most<br>Popular <span>Today</span> Sell</h3>
+				<h3 class="title1 wow fadeInLeft animated" data-wow-delay=".5s">Most<br>Popular <span>Today</span> Sold</h3>
 				<p class="data wow fadeInLeft animated" data-wow-delay=".5s"></p>
 			</div>
 			<div class="col-md-5 popular-right wow fadeInRight animated" data-wow-delay=".5s">
@@ -249,7 +249,7 @@
 				<h4>Details</h4>
 				<ul>
 					<li><a href="about.html"><i class="glyphicon glyphicon-chevron-right"></i> About</a></li>
-					<li><a href="gallery.html"><i class="glyphicon glyphicon-chevron-right"></i> Gallery</a></li>
+					<li><a href="menu.jsp"><i class="glyphicon glyphicon-chevron-right"></i> Menu</a></li>
 					<li><a href="contact.html"><i class="glyphicon glyphicon-chevron-right"></i> Contacts</a></li>
 				</ul>
 			</div>
