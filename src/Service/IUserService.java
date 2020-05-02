@@ -1,5 +1,10 @@
 package Service;
 
-public class IUserService {
+import java.util.List;
 
+import Model.User;
+
+public class IUserService {
+	public List<User> username;
+	public List<User> password;
 }
