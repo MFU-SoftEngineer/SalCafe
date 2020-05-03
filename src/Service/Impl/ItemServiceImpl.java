@@ -65,12 +65,20 @@ public class ItemServiceImpl implements IItemService{
 	@Override
 	public List<Item> queryAllItemByIdList(String idString) {
 		// TODO Auto-generated method stub
-		String[] idList = idString.split("S");
-		Collection<Integer> idArray = new ArrayList<Integer>();
-		for(int i = 0;i<idList.length;i++) {
-			idArray.add(Integer.valueOf(idList[i]));
+		List<Item> itemList = null;
+		try {
+			String[] idList = idString.split("S");
+			Collection<Integer> idArray = new ArrayList<Integer>();
+			for(int i = 0;i<idList.length;i++) {
+				idArray.add(Integer.valueOf(idList[i]));
+			}
+			itemList = itemDaoImpl.queryAllItemByIdList(idArray);
+		}catch(Exception e) {
+			e.printStackTrace();
 		}
-		return itemDaoImpl.queryAllItemByIdList(idArray);
+		return itemList;
+		
+		
 	}
 
 }
