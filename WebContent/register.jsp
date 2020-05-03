@@ -9,13 +9,13 @@
     <title>Register</title>
 
     <!-- Font Icon -->
-    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="login/fonts/material-icon/css/material-design-iconic-font.min.css">
 
     <!-- Main css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="login/css/style.css">
 </head>
 <body>
-<div class="main">
+<div class="main" src="images/bg.jpg">
 
         <!-- Sign up form -->
         <section class="signup">
@@ -58,7 +58,7 @@
         </section>
 </div>
 <!-- JS -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="login/vendor/jquery/jquery.min.js"></script>
+    <script src="login/js/main.js"></script>
 </body>
 </html>
