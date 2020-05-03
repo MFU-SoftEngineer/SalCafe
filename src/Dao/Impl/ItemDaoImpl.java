@@ -88,7 +88,7 @@ public class ItemDaoImpl implements IItemDao{
 			List<Item> itemList2 = session.createQuery("SELECT ent FROM Item ent WHERE ent.itemType=:typeId order by itemSales desc").setParameter("typeId", 2).setFirstResult(0).setMaxResults(requestNum).list();
 			itemList.addAll(itemList2);
 		}catch(Exception e) {
-			
+			e.printStackTrace();
 		}finally {
 			session.getTransaction().commit();
 			session.close();
