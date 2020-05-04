@@ -43,7 +43,19 @@ public class UserDaoImpl implements IUserDao{
 	@Override
 	public boolean createUser(User user) {
 		// TODO Auto-generated method stub
-		return false;
+		boolean suss = false;
+		try {
+			session = sessionFactory.getCurrentSession();
+			session.beginTransaction();
+			String hql = "from User where userName = :user)";
+			suss = session.createQuery(hql).setParameter("user", user).list().size() > 0 ? true : false;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.getTransaction().commit();
+	        session.close();
+		}
+		return suss;
 	}
 	@Override
 	public boolean deleteUser(int id) {

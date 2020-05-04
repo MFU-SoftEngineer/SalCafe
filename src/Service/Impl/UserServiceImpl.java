@@ -18,12 +18,11 @@ public class UserServiceImpl implements IUserService{
 	@Override
 	public boolean createUser(User user) {
 		// TODO Auto-generated method stub
-		return false;
+		return userDaoImpl.createUser(user);
 	}
 	@Override
 	public boolean deleteUser(int id) {
 		// TODO Auto-generated method stub
-		return false;
+		return userDaoImpl.deleteUser(id);
 	}
-
 }
