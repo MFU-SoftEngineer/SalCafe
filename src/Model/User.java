@@ -26,8 +26,7 @@ public class User {
 	
 	public User() {}
 	public User(int userId,String userName,String userPassWord,int userPhoneNumber,String userEmail,
-			String userDefaultAddress,String userState,Date createTime,int userGender,int userType
-			) {
+			String userDefaultAddress,String userState,Date createTime,int userGender,int userType) {
 		this.userId = userId;
 		this.userName = userName;
 		this.userPassWord = userPassWord;

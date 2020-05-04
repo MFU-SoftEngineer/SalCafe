@@ -1,12 +1,9 @@
 package Dao.Impl;
 
-import java.util.List;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import Dao.IUserDao;
-import Model.Item;
 import Model.User;
 
 public class UserDaoImpl implements IUserDao{
