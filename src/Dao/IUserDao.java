@@ -4,7 +4,8 @@ import java.util.List;
 
 import Model.User;
 
-public class IUserDao {
-	public List<User> username;
-	public List<User> password;
+public interface IUserDao {
+	public boolean searchUser(int id);
+	public boolean createUser(User user);
+	public boolean deleteUser(int id);
 }

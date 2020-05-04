@@ -1,31 +1,29 @@
 package Service.Impl;
 
-public class UserServiceImpl {
-			//User id number
-			private int nameId;
-			//User name
-			private String nameUser;
-			//Pass
-			private String Password;
-			
-			public void setUserId(int itemId) {
-				this.nameId = itemId;
-			}
-			public int getUserId() {
-				return this.nameId;
-			}
-			
-			public void setUserName(String userName) {
-				this.nameUser = userName;
-			}
-			public String getUserName() {
-				return this.nameUser;
-			}
+import Dao.Impl.UserDaoImpl;
+import Model.User;
+import Service.IUserService;
 
-			public void setPass(String pass) {
-				this.Password = pass;
-			}
-			public String getPass() {
-				return this.Password;
-			}
+public class UserServiceImpl implements IUserService{
+	UserDaoImpl userDaoImpl;
+	public UserServiceImpl() {
+		userDaoImpl = new UserDaoImpl();
+	}
+	
+	@Override
+	public boolean searchUser(int id) {
+		// TODO Auto-generated method stub
+		return userDaoImpl.searchUser(id);
+	}
+	@Override
+	public boolean createUser(User user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public boolean deleteUser(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
