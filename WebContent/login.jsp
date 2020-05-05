@@ -16,7 +16,6 @@
 </head>
 <body>
 
-
     <div class="main" src="images/bg.jpg">
 
         <!-- Sing in  Form -->
@@ -25,12 +24,12 @@
                 <div class="signin-content">
                     <div class="signin-image">
                         <figure><img src="images/BG.png" alt="sing up image"></figure>
-                        <a href="#" class="signup-image-link">Create an account</a>
+                        <a href="register.jsp" class="signup-image-link">Create an account</a>
                     </div>
 
                     <div class="signin-form">
                         <h2 class="form-title">Sign up</h2>
-                        <form method="POST" class="register-form" id="login-form">
+                        <form method="POST" class="register-form" id="login-form" action="popular.jsp">
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="your_name" id="your_name" placeholder="Your Name"/>

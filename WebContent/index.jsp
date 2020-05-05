@@ -40,6 +40,19 @@
 		});
 
 </script>
+<script type="text/javascript">
+	 function checkLogin() {
+         var session = request.getsessuon.getattribute("userId")==null;
+         if (session == false) {
+             alert("Your Session has expired");
+             window.location = "login.jsp";
+         }
+     }
+
+setInterval(checkLogin(),500);
+</script>
+
+
 <!--//end-smoth-scrolling-->
 </head>
 <body>
