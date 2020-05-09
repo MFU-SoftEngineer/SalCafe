@@ -21,14 +21,14 @@ public class UserDaoImpl implements IUserDao{
 		}
 	}
 	@Override
-	public boolean searchUser(int id) {
+	public boolean searchUser(String userName, String userPassWord) {
 		// TODO Auto-generated method stub
 		boolean isok = false;
 		try {
 			session = sessionFactory.getCurrentSession();
 			session.beginTransaction();
-			String hql = "from User where userId = :id)";
-			isok = session.createQuery(hql).setParameter("id", id).list().size() > 0 ? true : false;
+			String hql = "from User where userName = :userName and userPassWord = :userPassWord)";
+			isok = session.createQuery(hql).setParameter("userName", userName).setParameter("userPassWord", userPassWord).list().size() > 0 ? true : false;
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {

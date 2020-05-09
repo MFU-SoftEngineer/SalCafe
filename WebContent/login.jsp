@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -13,7 +14,23 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="login/css/style.css">
+    <%@ page import="Model.*"%>
+	<%@ page import="Service.Impl.*"%>
 </head>
+<script type="text/javascript">
+
+	<% 
+		String userName = request.getParameter("userName");
+		String userPassWord = request.getParameter("userPassWord");
+		if(userName != null && userPassWord != null){
+			UserServiceImpl impl = new UserServiceImpl();
+			impl.searchUser(userName,userPassWord);
+			request.getSession().setAttribute("userId", userName);
+			response.sendRedirect("menu.jps");
+		}
+	%>
+	
+</script>
 <body>
 
     <div class="main" src="images/bg.jpg">
@@ -29,14 +46,14 @@
 
                     <div class="signin-form">
                         <h2 class="form-title">Sign up</h2>
-                        <form method="POST" class="register-form" id="login-form" action="popular.jsp">
+                        <form method="POST" class="register-form" id="login-form" action="login.jsp">
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="your_name" id="your_name" placeholder="Your Name"/>
+                                <input type="text" name=userName id="your_name" placeholder="Your Name"/>
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="your_pass" id="your_pass" placeholder="Password"/>
+                                <input type="password" name="userPassWord" id="your_pass" placeholder="Password"/>
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
