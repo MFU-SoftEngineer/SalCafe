@@ -1,5 +1,7 @@
 package Dao.Impl;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -27,8 +29,19 @@ public class UserDaoImpl implements IUserDao{
 		try {
 			session = sessionFactory.getCurrentSession();
 			session.beginTransaction();
-			String hql = "from User where userName = :userName and userPassWord = :userPassWord)";
-			isok = session.createQuery(hql).setParameter("userName", userName).setParameter("userPassWord", userPassWord).list().size() > 0 ? true : false;
+			System.out.println(userName + "==" + userPassWord);
+			
+			isok = session.createQuery("SELECT ent FROM User ent WHERE ent.userName = :userName AND ent.userPassWord= :userPassWord").setParameter("userName", userName).setParameter("userPassWord", userPassWord).list().size()>0 ? true : false;
+			
+			//List<User> userList = session.createQuery("SELECT ent FORM User ent WHERE ent.userName = :userName AND ent.userPassWord= :userPassWord").setParameter("userName", userName).setParameter("userPassWord", userPassWord).list();
+			//if(userList.size() > 0) {
+				//isok = true;
+			//}else {
+				//isok = false;
+			//}
+				
+			
+		
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -44,7 +57,7 @@ public class UserDaoImpl implements IUserDao{
 				try {
 					session = sessionFactory.getCurrentSession();
 					session.beginTransaction();
-					String hql = "from User where userId = :user)";
+					String hql = "from User where user = :user";
 					session.save(user);
 					isok = true;
 				}catch(Exception e) {

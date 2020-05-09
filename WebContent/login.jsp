@@ -1,3 +1,5 @@
+<%@ page import ="java.sql.*" %>
+<%@ page import ="javax.sql.*" %>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -22,12 +24,17 @@
 	<% 
 		String userName = request.getParameter("userName");
 		String userPassWord = request.getParameter("userPassWord");
+		
 		if(userName != null && userPassWord != null){
 			UserServiceImpl impl = new UserServiceImpl();
-			impl.searchUser(userName,userPassWord);
-			request.getSession().setAttribute("userId", userName);
-			response.sendRedirect("menu.jps");
+			if(impl.searchUser(userName,userPassWord)==true){
+				request.getSession().setAttribute("userName", userName);
+				response.sendRedirect("menu.jps");
+			}else{
+				%>alert("Invalid User try again");<%
+			}
 		}
+		
 	%>
 	
 </script>
