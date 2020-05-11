@@ -29,19 +29,13 @@ public class UserDaoImpl implements IUserDao{
 		try {
 			session = sessionFactory.getCurrentSession();
 			session.beginTransaction();
-			System.out.println(userName + "==" + userPassWord);
-			
-			isok = session.createQuery("SELECT ent FROM User ent WHERE ent.userName = :userName AND ent.userPassWord= :userPassWord").setParameter("userName", userName).setParameter("userPassWord", userPassWord).list().size()>0 ? true : false;
-			
+			isok = session.createQuery("SELECT ent FROM User ent WHERE ent.userName = :userName AND ent.userPassWord= :userPassWord").setParameter("userName", userName).setParameter("userPassWord", userPassWord).list().size()>0 ? true : false;		
 			//List<User> userList = session.createQuery("SELECT ent FORM User ent WHERE ent.userName = :userName AND ent.userPassWord= :userPassWord").setParameter("userName", userName).setParameter("userPassWord", userPassWord).list();
 			//if(userList.size() > 0) {
 				//isok = true;
 			//}else {
 				//isok = false;
-			//}
-				
-			
-		
+			//}		
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -57,7 +51,6 @@ public class UserDaoImpl implements IUserDao{
 				try {
 					session = sessionFactory.getCurrentSession();
 					session.beginTransaction();
-					String hql = "from User where user = :user";
 					session.save(user);
 					isok = true;
 				}catch(Exception e) {

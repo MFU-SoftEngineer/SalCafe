@@ -18,6 +18,7 @@ public interface IItemDao {
 	public List<Item> queryAllItemByType(int itemType);
 	//query item by item sales(requestNum == how many number of popular item you want)
 	public List<Item> queryAllItemBySales(int requestNum);
+	public List<Item> queryAllItemBySales(int requestNum,int typeId);
 	//query all item by id list
 	public List<Item> queryAllItemByIdList(Collection id);
 }

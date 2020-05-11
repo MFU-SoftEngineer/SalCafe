@@ -122,11 +122,54 @@ List<Item> itemBeverageList = itemService.queryAllItemByIdList(request.getParame
 				if(rName.length < 1 || rPhone.length < 1 || rAddress.length < 1){
 					$("#btnok").attr("disabled", true);
 					myRotateVerify.resetSlide();
-					alert("Please fill out deliver information!");
 				}else{
-					
+					$(".close").click();
+					let button = $(".order");
+				    if(!button.hasClass('animate')) {
+				        button.addClass('animate');
+				        
+				        setTimeout(() => {
+				            button.removeClass('animate');
+				            
+				            var parames = new Array();
+				            var p = $("#p_price").text();
+							var pi = p.indexOf("%");
+				            var discount = null;
+				            var price = null;
+							if(pi != -1){
+								var ei = p.substr(pi);
+								discount = p.substring(pi-2,pi);
+								price = ei.substring(ei.indexOf("=")+2,ei.indexOf("T"));
+							}else{
+								discount = 1.00;
+								price = p.substring(p.indexOf(":")+2,p.indexOf(":")+4);
+							}
+							parames.push({ name: "price", value: price});
+							parames.push({ name: "discount", value: discount});
+				           
+				            parames.push({ name: "rName", value: rName});
+				            parames.push({ name: "rPhone", value: rPhone});
+				            parames.push({ name: "rAddress", value: rAddress});
+				            parames.push({ name: "payMent", value: payMent});
+				            parames.push({ name: "idList", value: idList});
+				            
+				            var temp_form = document.createElement("form");
+				            temp_form.action = "createOrder.jsp";
+				            temp_form.target = "_self";
+				            temp_form.method = "post";
+				            temp_form.style.display = "none";
+				            for (var item in parames) {
+				            	var opt = document.createElement("textarea");
+				            	opt.name = parames[item].name;
+				           		opt.value = parames[item].value;
+				            	temp_form.appendChild(opt);
+				            }
+				            document.body.appendChild(temp_form);
+				            temp_form.submit();				            
+				        }, 10000);
+				    }				
 				}
-			});
+			});	
 			
 			
 		});		

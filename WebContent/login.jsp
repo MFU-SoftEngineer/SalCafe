@@ -21,20 +21,23 @@
 </head>
 <script type="text/javascript">
 
-	<% 
-		String userName = request.getParameter("userName");
-		String userPassWord = request.getParameter("userPassWord");
-		
-		if(userName != null && userPassWord != null){
-			UserServiceImpl impl = new UserServiceImpl();
-			if(impl.searchUser(userName,userPassWord)==true){
-				request.getSession().setAttribute("userName", userName);
-				response.sendRedirect("menu.jps");
-			}else{
-				%>alert("Invalid User try again");<%
+	<%  
+		if(request.getSession().getAttribute("userName") != null){
+			response.sendRedirect("menu.jsp");
+		}else{
+			String userName = request.getParameter("userName");
+			String userPassWord = request.getParameter("userPassWord");
+			if(userName != null && userPassWord != null){
+				UserServiceImpl impl = new UserServiceImpl();
+				if(impl.searchUser(userName,userPassWord)==true){
+					request.getSession().setAttribute("userName", userName);
+					response.sendRedirect("menu.jsp");
+				}else{				
+					%>alert("Invalid User try again");
+					<%
+				}
 			}
 		}
-		
 	%>
 	
 </script>

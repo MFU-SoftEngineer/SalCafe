@@ -27,7 +27,7 @@
                         <h2 class="form-title">Sign up  </h2>
  
                         <form method="POST" class="register-form" id="register-form" action="createuser.jsp">
-                        	User ID <p type="text" name="id" id="userId" class="agree-term"></p>
+                        	User ID <p type="text" name="id" id="userIdP" class="agree-term"></p>
                         	<div class="form-group">
                                 <label for="id"><i class="zmdi zmdi-assignment"></i></label>
                                 <input type="text" name="userId" id="userId" placeholder="Your ID"/>
@@ -53,21 +53,21 @@
                                 <input type="number" name="userPhoneNumber" id="phone" placeholder="Telephone"/>
                             </div>
                             <div class="form-group">
-                                <input type="radio" name="userGender" id="1" value="1" class="agree-term"> Male
+                                <input type="radio" name="userGender" id="1" value="1" class="agree-term" checked> Male
   								<input type="radio" name="userGender" id="0" value="0" class="agree-term"> Female
                             </div>	
                             <div class="form-group">
-                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" onclick = "checkAgree()" />
                                 <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                                <input type="submit" style="background-color:grey;" disabled="disabled" name="signup" id="signup" class="form-submit" value="Register"/>
                             </div>
                         </form>
                     </div>
                     <div class="signup-image">
                         <figure><img src="images/bg1.png" alt="sing up image"></figure>
-                        <a href="#" class="signup-image-link">I am already member</a>
+                        <a href="login.jsp" class="signup-image-link">I am already member</a>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,17 @@
 </div>
 <!-- JS -->
 <script>
-	document.getElementById("userId").innerHTML = Math.floor(Math.random() * 1000);
+	document.getElementById("userId").value = Math.floor(Math.random() * 1000);
+	function checkAgree(){
+		var btn = document.getElementById("signup");
+		if(document.getElementById('agree-term').checked == false){
+			btn.setAttribute("disabled", true);
+			btn.style.backgroundColor='grey';
+		}else{
+			btn.removeAttribute("disabled");
+			btn.style.backgroundColor='blue';
+		}
+	}
 </script>
     <script src="login/vendor/jquery/jquery.min.js"></script>
     <script src="login/js/main.js"></script>

@@ -96,6 +96,23 @@ public class ItemDaoImpl implements IItemDao{
 		return itemList;
 	}
 	@Override
+	public List<Item> queryAllItemBySales(int requestNum, int typeId) {
+		List<Item> itemList = null;
+		try {
+			session = sessionFactory.getCurrentSession();
+			session.beginTransaction();
+			itemList = session.createQuery("SELECT ent FROM Item ent WHERE ent.itemType=:typeId order by itemSales desc").setParameter("typeId", typeId).setFirstResult(0).setMaxResults(requestNum).list();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.getTransaction().commit();
+			session.close();
+		}
+		return itemList;
+	}
+	
+	
+	@Override
 	public List<Item> queryAllItemByIdList(Collection id) {
 		// TODO Auto-generated method stub
 		List<Item> itemList = null;
@@ -112,4 +129,5 @@ public class ItemDaoImpl implements IItemDao{
 		}
 	    return itemList;
 	}
+	
 }

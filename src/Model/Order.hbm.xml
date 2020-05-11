@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020??5??10?? ????10:39:17 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="Model.Order" table="[ORDER]">
+        <id name="orderId" type="int">
+            <column name="ORDERID" />
+            <generator class="assigned" />
+        </id>
+        <property name="userName" type="java.lang.String">
+            <column name="USERNAME" />
+        </property>
+        <property name="price" type="double">
+            <column name="PRICE" />
+        </property>
+        <property name="discount" type="double">
+            <column name="DISCOUNT" />
+        </property>
+        <property name="payment" type="int">
+            <column name="PAYMENT" />
+        </property>
+        <property name="receiverAddress" type="java.lang.String">
+            <column name="RECEIVERADDRESS" />
+        </property>
+        <property name="receiverName" type="java.lang.String">
+            <column name="RECEIVERNAME" />
+        </property>
+        <property name="receiverPhone" type="java.lang.String">
+            <column name="RECEIVERPHONE" />
+        </property>
+        <property name="createTime" type="java.util.Date">
+            <column name="CREATETIME" />
+        </property>
+        <property name="orderState" type="int">
+            <column name="ORDERSTATE" />
+        </property>
+        <property name="itemsId" type="java.lang.String">
+            <column name="ITEMSID" />
+        </property>
+    </class>
+</hibernate-mapping>

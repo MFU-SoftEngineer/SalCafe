@@ -10,12 +10,13 @@
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--mobile apps-->
 <!--Custom Theme files -->
+<link rel="stylesheet" href="css/easyhelper.min.css">
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all"> 
 <link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
 <!-- //Custom Theme files -->
 <!-- js -->
-<script src="js/jquery-1.11.1.min.js"></script> 
+<script src="js/jquery-3.3.1.min.js"></script>
 <!-- //js -->
 <!--web-fonts-->
 <link href='https://fonts.googleapis.com/css?family=Aladin' rel='stylesheet' type='text/css'>
@@ -30,7 +31,10 @@
 <!--//end-animate-->
 <!-- start-smoth-scrolling-->
 <script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>	
+<script type="text/javascript" src="js/easing.js"></script>
+<script src="js/es6-shim.min.js"></script>
+<script src="js/jquery.transit.min.js"></script>
+<script src="js/easyhelper.min.js"></script>
 <script type="text/javascript">
 		jQuery(document).ready(function($) {
 			$(".scroll").click(function(event){		
@@ -38,21 +42,28 @@
 				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 			});
 		});
-
+	 	
+		function checkLogin(){
+			<%
+			if(request.getSession().getAttribute("userName") == null){
+				%>
+				Helper.ui.dialog({
+					title: "Please Login First",
+					content: "Do you already is a member?",
+					yesCallback: function () {
+						window.location.href = "login.jsp";
+					},
+					noCallback: function () {
+						window.location.href = "register.jsp";
+					}
+				});
+				<%
+			}else{
+				response.sendRedirect("popular.jsp");
+			}
+		%>	
+		}
 </script>
-<script type="text/javascript">
-	 function checkLogin() {
-         var session = request.getsessuon.getattribute("userId")==null;
-         if (session == false) {
-             alert("Your Session has expired");
-             window.location = "login.jsp";
-         }
-     }
-
-setInterval(checkLogin(),500);
-</script>
-
-
 <!--//end-smoth-scrolling-->
 </head>
 <body>
@@ -91,7 +102,7 @@ setInterval(checkLogin(),500);
 			<h1 class="wow fadeInDown animated" data-wow-delay=".5s"><a href="index.html">SAL Cafe Shop</a> </h1>
 			<p class="wow zoomIn animated" data-wow-delay=".5s">The Most Popular , Cost-efficient , Delicious Cafe Shop near MFU University </p> 
 			<div class="pop-up">
-				<a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" onclick="checkLogin()">Book Now</a>
+				<a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" onclick="checkLogin()" >Book Now</a>
 				<div id="small-dialog" class="mfp-hide book-form" style="display:none;">
 					<form>
 						<label>Date :</label>
