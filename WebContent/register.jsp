@@ -61,7 +61,7 @@
                                 <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" style="background-color:grey;" disabled="disabled" name="signup" id="signup" class="form-submit" value="Register"/>
+                                <input type="button" style="background-color:grey;" disabled="disabled" onclick="checkRegister()" name="signup" id="signup" class="form-submit" value="Register"/>
                             </div>
                         </form>
                     </div>
@@ -86,6 +86,43 @@
 			btn.style.backgroundColor='blue';
 		}
 	}
+</script>
+<script type="text/javascript">
+	function checkRegister(){
+		var name =$("#name").val();
+		if(!name.length>0){
+			alert("Please enter your username."); 
+	        name.focus();
+	        return;
+		}
+		var pass = $("#pass").val();
+		if(!pass.length>0){
+			alert("Please enter your password."); 
+	        pass.focus(); 
+	        return;
+		}
+		var re_pass = $("#re_pass").val();
+		if(re_pass != pass){
+			alert("Please enter same password."); 
+	        re_pass.focus(); 
+	        return;
+		}
+		var email = $("#email").val();
+		if(!email.length>0){
+			alert("Please enter your email."); 
+			email.focus(); 
+	        return;
+		}
+		var phone = $("#phone").val();
+		if(!phone.length>0){
+			alert("Please enter your phone."); 
+			phone.focus(); 
+	        return;
+		}
+		$("#register-form").submit();
+	}
+	    
+	    
 </script>
     <script src="login/vendor/jquery/jquery.min.js"></script>
     <script src="login/js/main.js"></script>
