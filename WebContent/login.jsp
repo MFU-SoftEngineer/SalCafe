@@ -56,7 +56,7 @@
 
                     <div class="signin-form">
                         <h2 class="form-title">Sign up</h2>
-                        <form method="POST" class="register-form" id="login-form" action="login.jsp">
+                        <form method="POST" class="register-form" id="login-form" action="menu.jsp">
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name=userName id="your_name" placeholder="Your Name"/>
@@ -70,7 +70,7 @@
                                 <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+                                <input type="button" name="signin" id="signin" class="form-submit" onclick="checkLogin()" value="Log in"/>
                             </div>
                         </form>
                         <div class="social-login">
@@ -88,6 +88,23 @@
 
     </div>
 <!-- JS -->
+<script>
+	function checkLogin(){
+		var name =$("#your_name").val();
+		if(!name.length>0){
+			alert("Please enter your username."); 
+	        name.focus();
+	        return;
+		}
+		var pass = $("#your_pass").val();
+		if(!pass.length>0){
+			alert("Please enter your password."); 
+	        pass.focus();
+	        return;
+		}
+		$("#login-form").submit();
+	}
+</script>
     <script src="login/vendor/jquery/jquery.min.js"></script>
     <script src="login/js/main.js"></script>
 </body>
