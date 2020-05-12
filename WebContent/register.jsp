@@ -53,7 +53,7 @@
                                 <input type="number" name="userPhoneNumber" id="phone" placeholder="Telephone"/>
                             </div>
                             <div class="form-group">
-                                <input type="radio" name="userGender" id="1" value="1" class="agree-term" checked> Male
+                                <input type="radio" name="userGender" id="1" value="1" class="agree-term"> Male
   								<input type="radio" name="userGender" id="0" value="0" class="agree-term"> Female
                             </div>	
                             <div class="form-group">
